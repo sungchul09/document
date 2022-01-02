@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function solution(day, number) {
+            var result = 0;
+            for (data of number) {
+                let lastNumber = data.toString().charAt(data.toString().length - 1);
+                if (lastNumber == day) result++;
+            }
+            console.log(result)
+        };
+        solution(3, [25, 23, 11, 47, 53, 17, 33]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function solution(arr) {
+            var answer = [];
+            var oddSum = 0;
+            var minOdd = Number.MAX_SAFE_INTEGER;
+            for (let data of arr) {
+                if (data % 2 != 0) {
+                    oddSum += data;
+                    if (minOdd > data) {
+                        minOdd = data;
+                    }
+                }
+            }
+            answer.push(oddSum);
+            answer.push(minOdd);
+            console.log(answer);
+        };
+        solution([12, 77, 38, 41, 53, 92, 85]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        arr = [10, 20, 30, 40, 50];
+        arr.forEach(function (v, i) {
+            console.log(v, i, this); // 10,0   20,1    30,2  40,3   50,4
+        }, [1, 2]);
+
+        a = [10, 11, 12, 13, 14, 15];
+        let answer = a.map(function (v, i) {
+            if (v % 2 == 0) return v;
+        }, [1, 2]);
+        console.log(answer)
+
+
+        answer = a.filter(function (v, i) {
+            return v % 2 == 0;
+        }, [1, 2]);
+        console.log(answer)
+
+        answer = a.reduce(function (acc, v) {
+            return acc + v;
+        }, 0)
+        console.log(answer);
+
+        let str = "abc";
+        console.log(str.split('b'));
+
+        arr = ['a', 'b', 'c'];
+        console.log(arr.join(''));
+        console.log(arr.join('#'));
+
+        console.log(String(123.3));
+        console.log(Number("123.3"));
+        console.log(parseInt(123.3));
+        console.log(parseInt("123.3"));
+
+        var str2 = "my name is replace";
+        console.log(str2.replace("is", "was"));
+    </script>
+</body>
+
+</html>
