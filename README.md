@@ -55,7 +55,7 @@
 
 <BR>
 
-'드림코딩 by 엘리' [자바스크립트 기초 강의 (ES5+): 같이 노트를 작성하며 배워요 📒](https://www.inflearn.com/course/dom-%EA%B8%B0%EB%B3%B8/dashboard ) 강의 내용 정리
+'드림코딩 by 엘리' [자바스크립트 기초 강의 (ES5+): 같이 노트를 작성하며 배워요 📒](https://www.youtube.com/playlist?list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2) 강의 내용 정리
 
 ---
 
