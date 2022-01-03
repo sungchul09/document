@@ -17,7 +17,7 @@
 
 ---
 
-[문서링크📃](https://github.com/sungchul09/document/blob/master/js/vanilla2/javascript2.md)
+[문서링크📃](https://mahogany-wineberry-412.notion.site/02eaebb5e0064b13852d171bf3a75a00)
 
 <BR>
 
@@ -31,7 +31,7 @@
 
 <BR>
 
-'김영보' [자바스크립트 ES6+ 심화](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-es6-%EC%8B%AC%ED%99%94 ) 강의 내용 정리
+'김영보' [자바스크립트 ES6+ 심화](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-es6-%EC%8B%AC%ED%99%94) 강의 내용 정리
 
 ---
 
@@ -41,7 +41,7 @@
 
 <BR>
 
-'김영보' [DOM 기본](https://www.inflearn.com/course/dom-%EA%B8%B0%EB%B3%B8/dashboard ) 강의 내용 정리
+'김영보' [DOM 기본](https://www.inflearn.com/course/dom-%EA%B8%B0%EB%B3%B8) 강의 내용 정리
 
 ---
 
