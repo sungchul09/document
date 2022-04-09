@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    변수
+    1) 변수란 ?
+        - 값을 저장하는 공간
+        - 자료를 저장할 수 있는 이름이 주어진 기억장소
+        - 변수라는 것은 계속 변하기때문에 값을 재할당 할 수 있다.
+    
+    2) 값 할당 (a = 1;)
+        - a(변수이름) =(할당연산자) 1(값) ;(문의 끝)
+        - a라는 변수에 1이라는 값을 할당 했다. 의 의미
+            - 메모리cell에 1이라는 값이 들어있다.
+            - a라는 변수는 그 메모리cell의 주소를 가리킨다.
+       - 메모리 주소를 직접쓰기 어렵기때문에 변수명을 사용하는 것     
+    
+    3) 네이밍
+        - 저장된 값을 잘 나타낼 수 있는 의미있는 이름
+        - 구체적일수록 좋다
+        - 금지 사항
+            - 예약어, 한국어, 이모지, 특수문자, 대소문자구분
+        - 추천 사항
+            - 카멜케이스
+            - bgAudio, windAudio 보다 audioBg, audioWind 이런식으로 쓰는게 좋다.
+            - 여러개의 변수를 숫자로 구분 x (ex. audio1, audio2, ...)
+    
+    4) let, const, var
+        - let: 재할당 가능
+        - const: 재할당 불가능 (상수, 상수변수 또는 변수)
+            - 단, 객체는 메모리 주소를 가리키기때문에 객체 내부의 변수에 대해 값 변경은 가능
+    
+    5) typeof
+        - 각 타입들은 자신의 타입들이 나온다
+            - number, string, 
+    */
+
+    console.log(typeof 123); // number
+    console.log(typeof "123"); // string
+    console.log(typeof []); // object
+    console.log(typeof {}); // object
+    console.log(typeof true); // boolean
+    console.log(typeof function () { }); // function
+    console.log(typeof new Date()); // object
+    console.log(typeof null); // object
+    console.log(typeof undefined); // undefined
+</script>
+
+</html>

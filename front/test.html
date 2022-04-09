@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+        #dog {
+            width: 200px;
+            height: 200px;
+            transform: translateX(100px) translateY(100px)
+        }
+    </style>
+</head>
+
+<body>
+    <button id="dog">강아지 정보 가져오기</button>
+</body>
+<script>
+    let data = '';
+    const button = document.querySelector("#dog")
+    const url = 'https://dog.ceo/api/breeds/image/random'
+    const getData = function () {
+        useAxios();
+        //useAsyncAwait();
+    }
+
+    async function useAsyncAwait() {
+        try {
+            const response = await axios.get(url);
+            data = response;
+            console.log("awaitAsync");
+            console.log(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    function useAxios() {
+        axios.get(url)
+            .then(response => {
+                data = response;
+                console.log("axios");
+                console.log(data);
+            })
+            .catch(error => {
+                console.log(error)
+            });
+    }
+
+    button.addEventListener('click', () => {
+        getData();
+
+    })
+</script>
+
+</html>

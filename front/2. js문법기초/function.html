@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    함수
+    1) 함수란 ?
+        - 특정한 일을 처리하는 코드의 집합
+        - 재사용성, 유지보수성, 높은 가독성을 위해 사용
+    
+    2) 메모리
+        - 함수의 이름은 함수를 참조하고 있다. (메모리의 주소를 가리킨다)
+        - 변수에 함수이름을 할당하면 동일한 메모리주소를 참조하고있는 변수가 생성되는것이다.
+            -ex) add(a, b) {return a + b};  const sum = add; 
+            - console.log(sum(1,2),  add(1,2))  둘다 같은값이 나온다.
+
+    3) REST 매개변수
+        - function sum(a, b, ...numbers) 
+    
+    4) 함수 선언문
+        - 내가 일반적으로 알고있는 방식
+        - function name() { }
+    
+    5) 함수 표현식
+        - 변수명에 무명함수를 할당하는 것. (무명함수의 메모리 참조 위치가 값으로 들어간다.)
+        - const name = function(){ }
+        - 화살표 함수를 사용하면 좀 더 간단하다
+            - const name = () => { }
+    
+    6) 생성자 함수
+        - const obj = new Function(); 
+    
+    7) IIFE
+        - 함수 실행 시 즉각적으로 사용되어야 할 때 이런식으로 사용하지만 많이 쓰이지않는다.
+        - ( function () { })();
+
+    8) 일급함수
+        - 함수가 일반객체처럼 모든 연산이 가능한 것
+        - 프로그래밍 언어에서 일급함수를 지원한다는것은 함수자체를 매개변수로 넣거나 함수자체를 반환할 수 있다는 것이다.
+        - 함수의 매개변수로 함수를 전달
+        - 함수의 반환 값으로 함수를 전달
+        - 할당 명령문
+        - 동일 비교 대상
+    
+    9) 고차함수
+        - 인자로 함수를 받거나(= 콜백함수) 힘수를 반환하는 함수
+    
+    10) 불변성 (immutability)
+        - 모든 코드는 immutability하게 코딩하는게 중요하다.
+        - 함수 내부에서 외부로부터 주어진 인자의 값을 변경하는것은 X
+        - 상태변경이 필요하다면 새로운 상태를(오브젝트, 값) 만들어서 반환해야 한다.
+            - 원시값 - 값에 의한 복사
+            - 객체값 - 참조에 의한 복사
+    */
+</script>
+
+</html>

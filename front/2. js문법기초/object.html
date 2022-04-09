@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    객체
+    1) 객체란? 
+        - 서로 연관있는 속성(데이터,프로퍼티)과 행동(함수,메소드)을 묶어주기위해 사용한다.
+        - 객체 생성 방법
+            - 객체 리터럴 사용: {key: value};
+                - key: 문자, 숫자, 문자열, 심볼
+                - value: 원시값, 객체(함수)
+            - 객체 클래스 사용: new Object();
+            - 객체 클래스 Create 사용: Object.create();
+        - 객체 접근 방법
+            - 마침표 표기법: apple.name
+            - 대괄호 표기법: apple['name']
+        - 객체 속성 추가, 삭제
+            - 추가: apple.emoji = 'a'
+            - 삭제: delete apple.emoji
+
+    2) 객체 동적으로 접근
+        - 정적으로 접근: 마침표 표기법 사용
+            - obj.name; obj.age;
+        - 동적으로 접근: 대괄호 표기법을 사용
+            - function getValue(a, b){ return a[b]};
+              console.log(getValue(obj, 'name');
+
+    3) 객체 축약 방법
+        - key, value의 값이 같다면 축약가능
+            - {x: x, y: y}를   {x, y} 로 변경 가능
+    
+    4) 생성자 함수
+        - function Fruit(name, emoji){
+            this.name = name;
+            this.emoji = emoji;
+        }
+            - 함수명 첫글자는 대문자
+            - this.변수명 하는 순간 key의 이름이 변수명으로 설정된다.
+    */
+</script>
+
+</html>
