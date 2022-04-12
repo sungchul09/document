@@ -112,6 +112,32 @@
             - Object.assign(Dog.prototype, play, sleep);
             - const dog = new Dog('멍멍');
         - dog.play(),  dog.sleep() 다 가능
+
+    * Prototype 이란 ?
+        - 비슷한 특징, 상태를 하나의 프로토타입으로 만들어 객체지향 을 구현한 자바스크립트의 특징
+        - _proto__ 접근자 프로퍼티로 prototype 내부에 접근할 수 있다.
+        - prototype에 모든 인스턴스가 사용할 프로퍼티, 메소드를 프로토타입에 미리 구현하여 사용
+        - prototype을 상속받아 상위부모의 자산을 공유하며 사용 가능
+    * prototype 기반 상속 방법은 ?
+        - 부모 프로토타입을 create() 또는 setPropertOf() 메소드를 사용해 자식 프로토타입과 연결한다.
+        - function Animal(){}   function Dog(name, age){}
+        - Dog.prototype = Object.create(Animal.prototype);
+            - Dog의 프로토타입을 Animal로 변경해준다.
+        - Dog의 [[Prototype]]에는 Dog만의 프로토타입이있고, 그 프로토타입이 Animal의 [[Prototype]]을 상속받은 상태
+        - 클래스와 super 처럼 생성자를 상속받는 방법
+            - 부모 생성자에 필요한것을 call이라는 함수를 통해 전달한다.
+            - function Dog(name, age){ Animal.call(this, name); this.age = age};
+                - 여기서 this는 내 객체의 this 이다.
+    * Prototype Chain 이란 ?
+        - 자바스크립트 객체간 상속의 연결 고리를 말한다.
+        - 프로토타입체인의 최상위 객체는 Object.prototype이다.
+            - 모든 자바스크립트 객체는 Object.prototype을 상속받는다.
+    * Class 는 무엇이고, Prototype, fucntion의 ES5 스펙만으로 Class를 구현할수 있는가
+        - 구현가능.
+        - 프로토타입으로 클래스처럼 구현 가능.
+        - 자바스크립트의 클래스는 프로토타입을 이용한 객체지향 프로그래밍을 문법적으로 class를 이용할 수 있도록 만든 것.
+            - 클래스도 프로토타입 기반 
+    
     */
 
     const obj1 = {};
