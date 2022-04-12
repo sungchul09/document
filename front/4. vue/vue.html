@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    /*
+    Vue.js
+    1) Vue.js란 ?
+        - MVVM 패턴의 ViewModel 레이어에 해당하는 화면단 라이브러리
+        - 데이터 바인딩, 화면 단위를 컴포넌트 형태로 제공
+        - 컴포넌트 간 통신의 기본 골격은 react의 단방향 데이터 흐름을 사용 (부모 -> 자식)
+        - 문법이 단순하고 간결. 초기학습비용이 낮고 누구나 쉽게 접근 가능.
+    
+    2) MVVM 패턴이란 ?
+        - 백엔드 로직과 클라이언트의 마크업 & 데이터 표현단을 분리하기 위한 구조
+        - 전통적인 MVC 패턴 방식에서 기인
+        - 화면 앞단의 동작 관련 로직과 뒷단 DB 데이터 처리, 서버 로직을 분리
+            - 뒷단에서 넘어온 데이터를 Model 에 담아 View로 넘겨주는 중간 지점이라고 보면 된다. 
+
+    3) Vue 인스턴스 생성 방법은 ?
+        - vue 인스턴스는 Vue.js로 화면 개발을 위해 꼭 생성해야 하는 필수 단위
+        - Vue() 생성자 함수를 이용하여 생성
+            - 생성시 옵션 객체를 전달 (template, data, methods, ...)
+            - let vm = new Vue({});
+            - new Vue({});
+        - Vue Component도 Vue 인스턴스와 동일
+    
+    4) 단방향 바인딩, 양방향 바인딩 차이점
+        - 단방향 바인등은 데이터 흐름이 한쪽이다.
+            - v-on, v-bind,  {{}}, 
+        - 양방향 바인딩은 데이터 흐름이 양방향이다.
+            - 데이터 모델 변경시 자동으로 UI도 변경된다.
+            - v-model 지시어를 사용하여 양방향 바인딩 생성
+    
+    5) Vue 프로젝트 배포 방법은 ?
+        - 웹팩 빌드 -> 빌드 결과를 서버에 올린다
+    
+    6) filter란 ?
+        - 일반적인 text 형식을 가공해주는 역할
+        - 머스태시 태그와 v-bind 에서 사용 가능
+        - 필터 체이닝도 가능 ({{message|filterA|filterB}})
+    
+    7) Vue 라우터란 ?
+
+    8) Vue 앱 구조에 대한 기본 설명 
+        - vue는 루트 컴포넌트를 생성한다. 루트 컴포넌트를 최상위로해서 자식컴포넌트들이 tree구조로 구성된다.
+        - root component
+            - header component
+            - body component
+            - main component
+            - footer component
+        
+    9) mixin이 필요한 이유는 ?
+        - mixin은 여러 컴포넌트 간 공통으로 사용하고 있는 로직, 상태들을 재사용하는 방법
+        - 2개의 컴포넌트가 동일한 메서드를 작성한다면 코드 중복 문제 발생
+            - mixin으로 해결 가능
+        - mixins: [] 속성으로 지정
+        - mixin과 컴포넌트의 옵션이 중첩된다면 두 옵션은 merged 된다.
+        - 라이프사이클도 mixin에 정의가 가능하지만 라이프 사이클 함수는 모두 실행된다.
+    
+    12) vue.js를 선택한 이유
+    
+    13) AOT, JIT에 대해 설명
+        - JIT
+            - Just In Time Compile의 약자. 
+            - 브라우저에서 템플릿 컴파일을 진행하기 떄문에 느리다.
+            - JIT 컴파일러를 포함해야하기 떄문에 용량이 크다.
+        - AOT
+            - Ahead Of Time Compile의 약자
+            - 빌드시 템플릿을 먼저 컴파일한다.
+            - 빌드에 시간이 더 소요되지만 브라우저에서 컴파일이 실행되지 않기때문에 빠르다.
+    
+    14) computed, method의 차이
+        - 결과는 같지만 동작방식이 다르다
+        - computed
+            - 계산된 값을 캐시에 저장해 뒀다가 값이 변경되면 다시 캐시된 값을 가지고 다시 계산한다.
+            - 같은페이지 내의 같은 연산을 수행할 때 효율적이다
+        - method 
+            - 호출될 때 마다 함수를 다시 계산한다.
+    
+    15) computed는 주로 언제 사용하나 ?
+        - 댓글 수 제한 등을 둘 때 사용할 수 있다.
+        - 댓글 수를 변수로 두고 해당 변수 사이즈가 300자가 넘어가면 300자까지 문자를 splice 처리 및 alert 띄우기를 적용
+    
+    */
+</script>
+
+</html>

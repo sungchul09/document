@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    /*
+    컴포넌트
+    1) 컴포넌트란 ?
+        - 화면의 영역을 일정한 단위로 쪼개 재활용 가능한 형태로 관리하는 것
+        - vue 인스턴스의 components 옵션에 컴포넌트 등록 가능하다.
+
+
+    2) 컴포넌트 props란 ?
+        - 상위 컴포넌트에서 하위 컴포넌트로 데이터를 전달할 떄 사용하는 옵션
+        - vue의 데이터흐름은 위에서 아래로 흐르기때문에 하위 컴포넌트가 상위 컴포넌트의 상태를 직접 조회할 수 있음
+        - props로 상태가 전달되면 해당 컴포넌트에 속성이 된다.
+
+    3) 글로벌 or 로컬 컴포넌트
+        - 글로벌: Vue.component('my-comp', {template: '', data: '', ...})
+        - 로컬: new Vue({ }) 내부의 components 옵션에 등록
+
+    4) 부모, 자식 컴포넌트 관계
+        - 위에서 아래로 props를 내리고, 아래에서 위로 event emit을 올린다
+        
+    5) props
+        - 상위 컴포넌트에서 하위 컴포넌트로 내리는 데이터 속성
+        - props 변수 명을 카멜기법으로 정의하면 html 태그에서 사용할때는 케밥 기법(-)으로 선언해야 한다.
+            - 카멜기법으로 선언했을때 주의 메시지 발생
+        
+    6) props를 쓰는 이유는 ?
+        - 모든 컴포넌트가 각 컴포넌트 자체의 스코프를 가지고 있다.
+            - 즉, 다른 컴포넌트의 값을 바로 참조할 수 없기 떄문에 props 사용
+        
+    7) 같은 레벨 컴포넌트 간 통신 방법은 ?
+        - 컴포넌트간 직접적인 통신은 불가능하도록 되어있는게 vue의 기본 구조이다
+        - 형제 컴포넌트들 간의 통신은 child -> parent -> children 방식으로 한다.
+            - 하위에서 상위로 보내 나머지 형제들에게 뿌리는 방식
+    
+    8) eventbus
+        - 상위 - 하위 관계가 아닌 컴포넌트 간의 통신을 위해 eventbus 활용
+        - 이벤트버스 사용을 위해 새로운 vue 인스턴스를 생성
+        - 이벤트 발생 컴포넌트에서 $emit() 호출
+            - var eventbus = new vue(); 
+            - eventbus.$emit("refresh", 10);
+        - 이벤트 받을 컴포넌트에서 $on() 으로 수신
+            - eventbus.$on("refresh", function(data){ ... })
+            - 만약 eventbus의 콜백함수 안에서 해당 컴포넌트의 메소드를 참고하려면 this를 변수에 담아 사용하면 된다.
+
+    */
+</script>
+
+</html>

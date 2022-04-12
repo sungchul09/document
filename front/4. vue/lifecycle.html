@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    라이프사이클
+    16) Vue.js의 라이프 사이클을 설명하세요
+        - creation, mounting, updating, destruction
+        - creation
+            - 라이프사이클 중 가장 먼저 실행되는 단계
+            - 이 단계의 훅에서는 DOM 트리에 해당 컴포넌트가 반영이 안되므로 태그의 id, class에 접근할 수 없다.
+            - 훅으로는 beforeCreated, created가 있다.
+            - beforeCreated에서 data, event에 접근할 수 없다.
+        - Mounting
+            - DOM 삽입 단계로 렌더링 되기 직전의 컴포넌트에 접근할 수 있다.
+            - 훅으로는 beforeMount, mounted가 있다.
+            - beforeMount 훅
+                - 템플릿과 렌더 함수들이 컴파일되고 렌더링이 되기 직전 단계에 호출이 된다.
+                - DOM 요소에 직접적으로 접근할 수가 없다. 
+            - mounted 훅
+                - 컴포넌트가 렌더링이 된 상태일 떄 호출된다.
+                - DOM에 접근할 수 있지만 주의해야 할 점은 자식 컴포넌트에서 마운트된 상태임을 보장할 수 없다는 점이다.
+        - Updating
+            - 웹페이지의 내용이나 무언가 바뀌면서 재렌더링을 해야할 떄 실행
+            - 훅으로는 beforeUpdate, updated가 있다.
+            - beforeUpdate 훅은 DOM 변경이 완료가 되고 패치 되기 직전에 호출된다.
+            - updated 훅은 재렌더링이 완료된 이후 호출된다.
+            - updated는 패치 이후 호출되는 훅이라 변화가 끝난 DOM에 접근이 가능하다.
+        - Destruction
+            - 컴포넌트가 해체? 파괴될 때 실행된다.
+            - 훅으로는 beforeDestroy, destroyed 가 있다.
+            - beforeDestroy는 해체 직전에 호출되며 모든 DOM과 이벤트들이 남아있다.
+            - destroyed는 해체가 완진히 된 후에 호출이 되는 훅이다.
+        
+    17) Vue instance 라이프사이클 초기화
+        - 인스턴스 생성 시 아래의 초기화 작업을 수행한다.
+        - 데이터 관찰 -> 템플릿 컴파일 -> DOM에 객체 연결 -> 데이터 변경시 DOM 업데이트
+        - 이 초기화 작업 외에도 개발자가 의도하는 커스텀 로직을 추가할 수 있다.
+            - 라이프사이클 초기화 메서드: created, mounted, updated, destroyed 등을 사용 할 수 있다.
+                
+    */
+</script>
+
+</html>
