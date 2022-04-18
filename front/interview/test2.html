@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    function solution(sentence) {
+        var answer = [];
+        let alpha = 'abcdefghijklmnopqrstuvwxyz'.split('');
+        let modSentence = sentence.toLowerCase().replace(/[^a-z]/g, '').split('').sort();
+        modSentence = modSentence.filter((v, i) => {
+            return modSentence.indexOf(v) === i;
+        });
+
+        for (let i = 0; i < alpha.length; i++) {
+
+            if (alpha[i] === modSentence[0]) {
+                modSentence.slice(0, 1);
+                continue;
+            }
+            answer.push(alpha[i]);
+        }
+        return answer;
+    }
+
+    const str = 'His comments came after Pyongyang announced it had ' +
+        'a plan to fire four missiles near the US territory of Guam.';
+    console.log(solution(str));
+
+    /*
+    
+    
+    
+    
+    */
+</script>
+
+</html>

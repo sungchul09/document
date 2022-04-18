@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+    this
+    1) this란 ?
+        - 문맥에 따라 가리키는 것이 달라진다.
+        - this 바인딩: 객체나 나 자신의 인스턴스를 가리키는 것
+        - 자바스크립트, 타입스크립트는 런타임 상 동적으로 this 바인딩이 결정된다.
+    
+    2) 위치별 this
+        - 글로벌의 this
+            - window
+        - 함수 내부에서의 this
+            - use strict 모드에서는 undefined이다.
+            - use strict가 아니라면 글로벌 객체를 가리킨다.
+        - 생성자 함수, 클래스에서으 this
+            - 앞으로 생성될 인스턴스 자체를 가리킴
+        - this는 함수를 호출한 오브젝트로 바뀐다. (동적이다)
+            - 호출한 사람이 누구냐에따라 this가 바뀌고 잃어버릴 수 있다. 
+            - 그래서 정적 바인딩을 사용
+    
+    3) 정적 binding
+        - bind 함수를 이용해 수동적으로 바인딩 해주기
+            - bind: 인자로 전달된 함수를 가지고 새롭게 binding 된 함수를 만든다.
+        - 화살표 함수를 이용해 수동적으로 바인딩 해주기
+            - arrow 함수: arrow 함수는 렉시컬 환경에서 this를 기억한다. 화살표 함수 밖에서 제일 근접함 스코프의 this를 가리킨다.
+ 
+    4) 키, 값 형태 함수 선언, 객체의 메서드, 화살표 함수
+        - 자바스크립트의 함수는 만능이다
+        - 함수처럼 사용, 생성자 함수로 사용도 가능 (클래스)
+            - 하지만, 이걸 위해 불필요한 무거운 프로토타입(많은 정보를 담고있는) 객체가 생성된다.
+            - ex. const dog ={name: 'dog', play: function(){conosle.log('h1')}};
+            - const obj1 = new dog.play(); 
+            - 여기서 play함수는 생성자 함수처럼 사용 가능하다. 즉, 무겁게 만들어진다.
+        - 객체의 메서드 (오브젝트에 속한 함수)로 사용하면 깔끔하고 가볍게 선언 가능하다
+            - ex. const dog ={name: 'dog', play(){conosle.log('h1')}};
+            - const obj1 = new dog.play(); 
+            - obj1에 값을 가져올떄 에러가 난다. 생성자함수 처럼 사용 불가능
+        - 화살표함수도 객체의 메서드와 마찬가지이다. 
+            - 생성자 함수 처럼 사용 불가능.
+            - 즉, 무거운 프로토 타입을 만들지 않는다.
+        
+    5) 화살표 함수 특징
+        - 문법이 깔끔하다
+        - 생성자 함수로 사용이 불가능 (무거운 프로토타입을 만들지 않는다.)
+        - this에 대한 바인딩이 정적으로 결정된다.
+            - 함수에서 제일 근접한 상위 스코프의 this에 정적으로 바인딩된다.
+        - 
+    */
+    function Dog(name) {
+        this.name = name;
+        this.getName = function () {
+            console.log(`${name}`)
+        }
+        // this.getName = this.getName.bind(this);
+        this.getName = () => { console.log(`${name}`) };
+    }
+
+    function Cat(name) {
+        this.name = name;
+        this.getName = function () {
+            console.log(`${name}`)
+        }
+    }
+    const dog = new Dog('멍멍');
+    const cat = new Cat('야옹');
+    console.log(dog.getName())
+    console.log(cat.getName())
+    dog.getName = cat.getName;
+    console.log(dog.getName())
+    console.log(cat.getName())
+</script>
+
+</html>

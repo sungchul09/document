@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    function solution(p) {
+        let answer = 0;
+        for (let i = 0; i < p.length; i++) {
+            const i_left = p[i][0];
+            const i_right = p[i][1];
+            for (let j = i; j < p.length; j++) {
+                const j_left = p[j][0];
+                const j_right = p[j][1];
+                if ((i_right === j_left) && (i_left === j_right)) {
+                    answer++;
+                }
+            }
+        }
+        return answer;
+    }
+
+    const p = [[1, 3], [3, 1], [3, 5], [2, 5], [5, 3]];
+    console.log(solution(p));
+</script>
+
+</html>
