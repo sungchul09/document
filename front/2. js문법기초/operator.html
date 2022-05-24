@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    연산자
+    - 1) 단축연산자: &&  
+        - let num = 0;
+        - num && 1
+        - num이 있으면 1할당.
+    - 2) 단축연산자: ||
+        - let num = 0;
+        - num || 1
+        - falsy한 경우 1 할당. (undefined, null, 0, false)
+    - 3) optional chaining
+        - let item = {price: 1};
+        - let price = item?.price;
+            - item객체가 있다면? item.price를 price에 할당.
+    - 4) nullish: ??
+        - let num = 0;
+        - num ?? 1
+        - undefined, null 일 경우에만 1 할당.
+    */
+    let num = { name: null };
+    const operOr = num || 1;
+    const operAnd = num && 1;
+    const operNullish = num ?? 1;
+    const operChaning = num?.name;
+    console.log(operOr)
+    console.log(operAnd)
+    console.log(operNullish)
+    console.log(operChaning)
+</script>
+
+</html>

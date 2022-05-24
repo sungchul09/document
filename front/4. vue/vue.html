@@ -156,10 +156,10 @@
     21) ESLint란 ?
         - 문법 검사기, 에러를 덜 내도록 코딩을 유도해주는 보조도구
         - /* eslint-disable */ /*를 추가해 컴포넌트마다 막을 수 있다.
-- 또는 package.json이 있는 디렉토리에 vue.config.js를 만든다
-- module.exports = {
-lintOnSave: false
-}
+    - 또는 package.json이 있는 디렉토리에 vue.config.js를 만든다
+    - module.exports = {
+    lintOnSave: false
+    }
 
 22) main.js란?
 - 애플리케이션 설정, 라우터 등을 설정한다.
@@ -175,6 +175,13 @@ lintOnSave: false
 
 24) views 폴더
 - views 폴더에는 페이지 라우팅 관련된 파일만 구성하는것이 좋다.
+
+21) 데이터 호출 시점        
+    - 라우터 네비게이션 가드
+        - 특정 url로 접근하기 전의 동작을 정의하는 속성(함수)   
+    - 컴포넌트 라이프 사이클 훅
+        - created: (컴포넌트가 생성)되자마자 호출되는 로직
+ 
 */
 </script>
 

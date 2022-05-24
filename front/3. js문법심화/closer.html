@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 
+    클로저
+    1) 클로저란 ?
+        - 함수와, 그를 둘러싸고있는 외부 렉시컬환경의 조합
+        - 내부함수에서 외부함수의 상태에 접근할 수 있는 권한을 주는 것
+        - 내부함수에서 외부 함수의 데이터에 접근할 수 있는 것
+        - 닫혀있는 느낌.
+    
+    2) 클로저 활용 방법은 ?
+        - 내부 정보를 은닉하고 공개함수를 통한 데이터 조작을 위해 활용
+        - 즉, 캡슐화와 정보은닉
+        - 클래스 private 필드와 똑같은 효과
+            - ES6 이전에는 클래스와 private 필드가 없었기 때문에 클로저 특징을 이용
+            - 정보 은닉, 공개함수를 통해서만 데이터를 조작하기 위해 사용
+        - 
+    */
+    const text = 'hello';
+    function func() {
+        console.log(text);
+    }
+    func();
+
+    function outer() {
+        const x = 0;
+        function inner() {
+            console.log(`${x}`);
+        }
+        return inner;
+    }
+
+    const func1 = outer();
+
+    function makeCounter() {
+        let count = 0;
+        function increase() {
+            count++;
+            console.log(count);
+        }
+        return increase;
+    }
+
+    const increase = makeCounter();
+    increase();
+    increase();
+
+    class Counter {
+        #count = 0;
+        increase() {
+            this.#count++;
+            console.log(this.#count);
+        }
+
+    }
+
+    const counter = new Counter();
+    counter.increase();
+
+    function loop() {
+        const array = [];
+        for (let i = 0; i < 5; i++) {
+            array
+        }
+    }
+
+</script>
+
+</html>
