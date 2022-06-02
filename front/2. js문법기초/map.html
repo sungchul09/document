@@ -41,6 +41,31 @@
             - map.get(key),    obj[key];
         
     */
+    /* map 생성방법 */
+    const map = new Map([
+        ['key1', '사과'],
+        ['key2', '바나나'],
+    ])
+
+    const object = new Object(
+        {
+            key1: '사과',
+            key2: '바나나'
+        },
+    )
+
+    console.log(map);
+    console.log(object);
+
+    console.log(map.size);
+    console.log(map.has('key2'));
+    console.log(map.forEach((v, k) => console.log(v, k)));
+    console.log(map.keys()); // key 출력
+    console.log(map.values()); // value 출력 
+    console.log(map.entries()); // map 출력
+    console.log(map.set('key3', '키위')); // map 출력
+    console.log(map.delete('key3')); // true, false 출력
+    console.log(map.clear()); // undefined 출력
 </script>
 
 </html>

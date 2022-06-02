@@ -42,7 +42,9 @@
     
     7) IIFE
         - 함수 실행 시 즉각적으로 사용되어야 할 때 이런식으로 사용하지만 많이 쓰이지않는다.
-        - ( function () { })();
+        -     (function () {
+                console.log('asdf')
+                }());
 
     8) 일급함수
         - 함수가 일반객체처럼 모든 연산이 가능한 것
@@ -62,6 +64,11 @@
             - 원시값 - 값에 의한 복사
             - 객체값 - 참조에 의한 복사
     */
+    const name = () => { return "success"; }
+
+    (function () {
+        console.log('asdf')
+    }());
 </script>
 
 </html>

@@ -129,17 +129,130 @@
         - 이를 해결하기위해 타이핑된 배열(int8Array, float32Array)이 추가되고 있다.
     */
 
-    let arr = [1, 2, 3, 4, 5, 6];
-    arr[10] = 10;
-    console.log(arr)
-    delete arr[3]
-    console.log(arr);
+    /* 유용한 함수 */
+    // 1. slice
+    // 잘라진 새로운 배열을 만든다. (arr 값은 그대로)
+    let arr = [1, 2, 3, 4, 5];
+    let food = ['사과', '오렌지', '포도'];
+    let slice = arr.slice(0, 2);
+    console.log(`[slice] ${arr} /  ${food} / ${slice}`);
 
-    let arr2 = [1, 2, 3];
-    arr2.splice(1, 2, 'a', 'b', 'c')
-    console.log(arr2)
+    // 2. concat
+    // arr와 전달받은 파라미터(food)를 합쳐 배열을 만든다. (arr, food 값은 그대로)
+    arr = [1, 2, 3, 4, 5];
+    food = ['사과', '오렌지', '포도'];
+    let concat = arr.concat(food);
+    console.log(`[concat] ${arr} /  ${food} / ${concat}`);
 
-    arr2.forEach((value) => { console.log(value) })
+    // 3. reverse
+    // arr 순서를 거꾸로 한다. (arr 값이 바뀜)
+    arr = [1, 2, 3, 4, 5];
+    food = ['사과', '오렌지', '포도'];
+    let reverse = arr.reverse();
+    console.log(`[reverse] ${arr} /  ${food} / ${reverse}`);
+
+    // 4. flat
+    // 중첩배열을 편다 (arr 값은 그대로)
+    arr = [1, [2, [3]]];
+    food = ['사과', '오렌지', '포도'];
+    let flat = arr.flat();
+    console.log(`[flat] [1, [2, [3]]] / [1, 2, [3]]`);
+
+    // 5. fill
+    // 특정 값을 채운다. (arr 값이 바뀜)
+    arr = [1, 2, 3, 4, 5];
+    food = ['사과', '오렌지', '포도'];
+    let fill = arr.fill(1);
+    let fill2 = arr.fill('s', 1, 3);
+    console.log(`[fill] ${arr} / ${fill} / ${fill2}`);
+
+    // 6. join
+    // 문자열로 합치기 (arr 값은 그대로)
+    arr = [1, 2, 3, 4, 5];
+    food = ['사과', '오렌지', '포도'];
+    let join = arr.join('|');
+    let join2 = arr.join();
+    let join3 = arr.join('');
+    console.log(`[join] ${arr} / ${join} / ${join2} / ${join3}`);
+
+    /* 고차함수 - 콜백 함수를 전달하거나 전달 받는 함수 */
+    // 1. forEach 
+    // 일반적인 for문과 같다
+    arr = [1, 2, 3, 4, 5];
+    let forEach = arr.forEach(v => { return v });
+    console.log(`[forEach] ${arr} / ${forEach}`);
+
+    // 2. find
+    // 조건에 맞는 아이템 인덱스 반환
+    arr = [1, 2, 3, 4, 5];
+    let find = arr.find(v => { return v === 4 });
+    console.log(`[find] ${arr} / ${find}`);
+
+    // 3. findIndex
+    // 조건에 맞는 아이템 인덱스 반환
+    arr = [1, 2, 3, 4, 5];
+    let findIndex = arr.findIndex(v => { return v === 4 });
+    console.log(`[findIndex] ${arr} / ${findIndex}`);
+
+    // 4. some
+    // 아이템들이 부분적으로 조건에 맞는지 확인 
+    arr = [1, 2, 3, 4, 5];
+    let some = arr.some(v => { return v === 4 });
+    let some2 = arr.some(v => { return v !== 4 });
+    console.log(`[some] ${arr} / ${some} / ${some2}`);
+
+    // 4. every
+    // 모든 아이템들이 조건에 맞는지 확인 
+    arr = [1, 2, 3, 4, 5];
+    let every = arr.every(v => v === 4);
+    let every2 = arr.every(v => v < 6);
+    console.log(`[every] ${arr} / ${every} / ${every2}`);
+
+    // 4. filter
+    // 조건에 맞는 모든 아이템 -> 새로운 배열로 생성
+    arr = [1, 2, 3, 4, 5];
+    let filter = arr.filter(v => v === 4);
+    let filter2 = arr.filter(v => v > 5);
+    console.log(`[filter] ${arr} / ${filter} / ${filter2}`);
+
+    // 5. map
+    // 배열의 아이템들을 조건에 맞춰 각각 다른 아이템으로 변환.
+    arr = [1, 2, 3, 4, 5];
+    let map = arr.map(v => v * 2);
+    console.log(`[map] ${arr} / ${map}`);
+
+    // 6. flatmap
+    // map의 결과의 중첩배열을 한 단계 편다.
+    arr = [1, 2, 3, 4, 5];
+    food = ['오렌지', '딸기', '초코'];
+    map = arr.map((v, index) => [v, food[index]]);
+    let flatmap = arr.flatMap((v, index) => [v, [index, food[index]]]);
+    flatmap2 = arr.flatMap(v => v * 2);
+    console.log(`[flatmap] ${map} / ${flatmap}`);
+    console.log(map);
+    console.log(flatmap);
+    console.log(flatmap2);
+
+    // 7. sort
+    // 오름차순, 내림차순 정렬
+    arr = [1, 2, 3, 4, 5];
+    let sort = arr.sort((a, b) => a - b);
+    let sort2 = arr.sort((a, b) => b - a);
+    console.log(`[sort] ${arr} / ${sort} / ${sort2}`);
+
+    // 8. reduce
+    // 배열 각 요소를 순회하며 callback 함수의 실행값을 누적한다. (하나의 결과값을 반환)
+    arr = [1, 2, 3, 4, 5];
+    let reduce = arr.reduce((sum, v) => sum);
+    let reduce2 = arr.reduce((sum, v) => { sum += v; return sum });
+    let reduce3 = arr.reduce((sum, v) => sum += v);
+    console.log(`[reduce] ${arr} / ${reduce} / ${reduce2} / ${reduce3}`);
+
+
+
+
+
+
 </script>
 
 </html>
